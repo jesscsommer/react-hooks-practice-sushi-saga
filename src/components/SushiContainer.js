@@ -5,7 +5,7 @@ import Sushi from './Sushi'
 function SushiContainer({ allSushi }) {
   return (
     <div className="belt">
-      {allSushi.map(sushi => <Sushi key={sushi.id} {...sushi} /> )}
+      {allSushi.slice(0, 4).map(sushi => <Sushi key={sushi.id} {...sushi} /> )}
       <MoreButton />
     </div>
   );
