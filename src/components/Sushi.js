@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Sushi({ name, img_url, price }) {
+function Sushi({ name, img_url, price, spendMoney }) {
 
   const [isEaten, setIsEaten] = useState(false)
   const eatSushi = () => {
@@ -9,7 +9,10 @@ function Sushi({ name, img_url, price }) {
 
   return (
     <div className="sushi">
-      <div className="plate" onClick={eatSushi}>
+      <div className="plate" onClick={() => {
+        eatSushi()
+        spendMoney(price)
+      }}>
         {isEaten ? null : (
           <img
             src={img_url}

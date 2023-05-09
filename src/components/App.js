@@ -5,6 +5,8 @@ import Table from "./Table";
 const API = "http://localhost:3001/sushis";
 
 const App = () => {
+
+  //! Get sushi and save to state
   const [allSushi, setAllSushi] = useState([])
 
   useEffect(() => {
@@ -13,10 +15,16 @@ const App = () => {
     .then(data => setAllSushi(data))
   }, [])
 
+  //! Set initial budget and allow updates 
+  const [money, setMoney] = useState(250)
+  const spendMoney = (amountSpent) => {
+      setMoney(money => money - amountSpent)
+  }
+
   return (
     <div className="app">
-      <SushiContainer allSushi={allSushi}/>
-      <Table />
+      <SushiContainer allSushi={allSushi} spendMoney={spendMoney} />
+      <Table money={money} />
     </div>
   );
 }

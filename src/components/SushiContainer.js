@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import MoreButton from "./MoreButton";
 import Sushi from './Sushi'
 
-function SushiContainer({ allSushi }) {
-  //TODO: use a state to control what we're slicing 
-  //TODO: create onClick function for more button to change the state/increment by 4 
+function SushiContainer({ allSushi, spendMoney }) {
 
   const [start, setStart] = useState(0)
 
@@ -14,7 +12,7 @@ function SushiContainer({ allSushi }) {
 
   return (
     <div className="belt">
-      {allSushi.slice(start, start + 4).map(sushi => <Sushi key={sushi.id} {...sushi} /> )}
+      {allSushi.slice(start, start + 4).map(sushi => <Sushi key={sushi.id} {...sushi} spendMoney={spendMoney} /> )}
       <MoreButton handleClick={handleClick} />
     </div>
   );
