@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Sushi({ name, img_url, price, spendMoney, money }) {
+const Sushi = ({ name, img_url, price, spendMoney, money }) => {
 
   const [isEaten, setIsEaten] = useState(false)
   const eatSushi = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 
-function MoreButton({ handleClick }) {
+const MoreButton = ({ handleClick }) => {
   return <button onClick={handleClick}>More sushi!</button>;
 }
 

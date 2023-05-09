@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MoreButton from "./MoreButton";
 import Sushi from './Sushi'
 
-function SushiContainer({ allSushi, spendMoney, money }) {
+const SushiContainer = ({ allSushi, spendMoney, money }) => {
 
   const [start, setStart] = useState(0)
 

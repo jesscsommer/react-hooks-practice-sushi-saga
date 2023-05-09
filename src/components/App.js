@@ -20,11 +20,14 @@ const App = () => {
   const spendMoney = (amountSpent) => {
       setMoney(money => money - amountSpent)
   }
+  const addMoney = (amountAdded) => {
+      setMoney(money => money + amountAdded)
+  }
 
   return (
     <div className="app">
       <SushiContainer allSushi={allSushi} spendMoney={spendMoney} money={money} />
-      <Table money={money} />
+      <Table money={money} addMoney={addMoney} />
     </div>
   );
 }
