@@ -16,14 +16,14 @@ const App = () => {
   }, [])
 
   //! Set initial budget and allow updates 
-  const [money, setMoney] = useState(250)
+  const [money, setMoney] = useState(30)
   const spendMoney = (amountSpent) => {
       setMoney(money => money - amountSpent)
   }
 
   return (
     <div className="app">
-      <SushiContainer allSushi={allSushi} spendMoney={spendMoney} />
+      <SushiContainer allSushi={allSushi} spendMoney={spendMoney} money={money} />
       <Table money={money} />
     </div>
   );

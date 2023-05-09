@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Sushi({ name, img_url, price, spendMoney }) {
+function Sushi({ name, img_url, price, spendMoney, money }) {
 
   const [isEaten, setIsEaten] = useState(false)
   const eatSushi = () => {
@@ -10,8 +10,12 @@ function Sushi({ name, img_url, price, spendMoney }) {
   return (
     <div className="sushi">
       <div className="plate" onClick={() => {
-        eatSushi()
-        spendMoney(price)
+        if (money < price) {
+          alert('No free meals!')
+        } else {
+          spendMoney(price)
+          eatSushi()
+        }
       }}>
         {isEaten ? null : (
           <img
